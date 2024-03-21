@@ -48,7 +48,6 @@ class Customer(models.Model):
 
 class SalesRepresentative(models.Model):
     rep_id = models.IntegerField(primary_key=True)
-    #rep_number = models.IntegerField(unique=True)...might need?
     name = models.CharField(max_length=100)
     email = models.EmailField()
     phone = models.CharField(max_length=20)
