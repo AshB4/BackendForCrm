@@ -1,0 +1,420 @@
+[
+  {
+    "model": "mybe.equipmenttype",
+    "pk": 1,
+    "fields": {
+      "type_id": 1,
+      "type_name": "Trucks"
+    }
+  },
+  {
+    "model": "mybe.equipmenttype",
+    "pk": 2,
+    "fields": {
+      "type_id": 2,
+      "type_name": "Big Rigs"
+    }
+  },
+  {
+    "model": "mybe.equipmenttype",
+    "pk": 3,
+    "fields": {
+      "type_id": 3,
+      "type_name": "Trackhoes"
+    }
+  },
+  {
+    "model": "mybe.equipmenttype",
+    "pk": 4,
+    "fields": {
+      "type_id": 4,
+      "type_name": "Backhoes"
+    }
+  },
+  {
+    "model": "mybe.equipmenttype",
+    "pk": 5,
+    "fields": {
+      "type_id": 5,
+      "type_name": "Excavators"
+    }
+  },
+  {
+    "model": "mybe.equipmenttype",
+    "pk": 6,
+    "fields": {
+      "type_id": 6,
+      "type_name": "Bulldozers"
+    }
+  },
+  {
+    "model": "mybe.equipmenttype",
+    "pk": 7,
+    "fields": {
+      "type_id": 7,
+      "type_name": "Dump Trucks"
+    }
+  },
+  {
+    "model": "mybe.equipmenttype",
+    "pk": 8,
+    "fields": {
+      "type_id": 8,
+      "type_name": "Cranes"
+    }
+  },
+  {
+    "model": "mybe.equipmentlisting",
+    "pk": 1,
+    "fields": {
+      "listing_id": 1,
+      "type_id": 1,
+      "make": "Volvo",
+      "model": "VNL64T780",
+      "year": 2018,
+      "price": 80000
+    }
+  },
+  {
+    "model": "mybe.equipmentlisting",
+    "pk": 2,
+    "fields": {
+      "listing_id": 2,
+      "type_id": 2,
+      "make": "Freightliner",
+      "model": "Cascadia",
+      "year": 2016,
+      "price": 70000
+    }
+  },
+  {
+    "model": "mybe.equipmentlisting",
+    "pk": 3,
+    "fields": {
+      "listing_id": 3,
+      "type_id": 3,
+      "make": "Peterbilt",
+      "model": "389",
+      "year": 2015,
+      "price": 120000
+    }
+  },
+  {
+    "model": "mybe.equipmentlisting",
+    "pk": 4,
+    "fields": {
+      "listing_id": 4,
+      "type_id": 4,
+      "make": "Caterpillar",
+      "model": "320D",
+      "year": 2019,
+      "price": 150000
+    }
+  },
+  {
+    "model": "mybe.equipmentlisting",
+    "pk": 5,
+    "fields": {
+      "listing_id": 5,
+      "type_id": 5,
+      "make": "John Deere",
+      "model": "310SL",
+      "year": 2017,
+      "price": 60000
+    }
+  },
+  {
+    "model": "mybe.equipmentlisting",
+    "pk": 6,
+    "fields": {
+      "listing_id": 6,
+      "type_id": 6,
+      "make": "Komatsu",
+      "model": "PC200-8",
+      "year": 2015,
+      "price": 90000
+    }
+  },
+  {
+    "model": "mybe.equipmentlisting",
+    "pk": 7,
+    "fields": {
+      "listing_id": 7,
+      "type_id": 7,
+      "make": "Caterpillar",
+      "model": "D6T",
+      "year": 2016,
+      "price": 130000
+    }
+  },
+  {
+    "model": "mybe.equipmentlisting",
+    "pk": 8,
+    "fields": {
+      "listing_id": 8,
+      "type_id": 8,
+      "make": "Volvo",
+      "model": "VHD64B200",
+      "year": 2017,
+      "price": 100000
+    }
+  },
+  {
+    "model": "mybe.customerorder",
+    "pk": 1,
+    "fields": {
+      "order_id": 1,
+      "listing_id": 1,
+      "customer": "ABC Construction",
+      "quantity": 2,
+      "total_price": 160000
+    }
+  },
+  {
+    "model": "mybe.customerorder",
+    "pk": 2,
+    "fields": {
+      "order_id": 2,
+      "listing_id": 4,
+      "customer": "XYZ Excavation",
+      "quantity": 1,
+      "total_price": 150000
+    }
+  },
+  {
+    "model": "mybe.customerorder",
+    "pk": 3,
+    "fields": {
+      "order_id": 3,
+      "listing_id": 5,
+      "customer": "DEF Contractors",
+      "quantity": 3,
+      "total_price": 180000
+    }
+  },
+  {
+    "model": "mybe.customerorder",
+    "pk": 4,
+    "fields": {
+      "order_id": 4,
+      "listing_id": 7,
+      "customer": "GHI Construction",
+      "quantity": 2,
+      "total_price": 260000
+    }
+  },
+  {
+    "model": "mybe.customerorder",
+    "pk": 5,
+    "fields": {
+      "order_id": 5,
+      "listing_id": 8,
+      "customer": "JKL Builders",
+      "quantity": 1,
+      "total_price": 100000
+    }
+  },
+  {
+    "model": "mybe.customerorder",
+    "pk": 6,
+    "fields": {
+      "order_id": 6,
+      "listing_id": 9,
+      "customer": "MNO Contractors",
+      "quantity": 1,
+      "total_price": 800000
+    }
+  },
+  {
+    "model": "mybe.salesrepresentative",
+    "pk": 1,
+    "fields": {
+      "rep_id": 1,
+      "name": "Alice Brown",
+      "email": "alice@company.com",
+      "phone": "+1 (555) 111-2222"
+    }
+  },
+  {
+    "model": "mybe.salesrepresentative",
+    "pk": 2,
+    "fields": {
+      "rep_id": 2,
+      "name": "Bob White",
+      "email": "bob@company.com",
+      "phone": "+1 (555) 333-4444"
+    }
+  },
+  {
+    "model": "mybe.salesrepresentative",
+    "pk": 3,
+    "fields": {
+      "rep_id": 3,
+      "name": "Carol Green",
+      "email": "carol@company.com",
+      "phone": "+1 (555) 555-6666"
+    }
+  },
+  {
+    "model": "mybe.salesrepresentative",
+    "pk": 4,
+    "fields": {
+      "rep_id": 4,
+      "name": "David Lee",
+      "email": "david@company.com",
+      "phone": "+1 (555) 777-8888"
+    }
+  },
+  {
+    "model": "mybe.salesrepresentative",
+    "pk": 5,
+    "fields": {
+      "rep_id": 5,
+      "name": "Rachel Wong",
+      "email": "rachel@company.com",
+      "phone": "+1 (555) 999-0000"
+    }
+  },
+  {
+    "model": "mybe.salesrepresentative",
+    "pk": 6,
+    "fields": {
+      "rep_id": 6,
+      "name": "Michael Chen",
+      "email": "michael@company.com",
+      "phone": "+1 (555) 123-4567"
+    }
+  },
+  {
+    "model": "mybe.transaction",
+    "pk": 1,
+    "fields": {
+      "transaction_id": 1,
+      "order_id": 1,
+      "payment_method": "Credit Card",
+      "amount": 160000,
+      "status": "Paid"
+    }
+  },
+  {
+    "model": "mybe.transaction",
+    "pk": 2,
+    "fields": {
+      "transaction_id": 2,
+      "order_id": 2,
+      "payment_method": "Wire Transfer",
+      "amount": 150000,
+      "status": "Paid"
+    }
+  },
+  {
+    "model": "mybe.transaction",
+    "pk": 3,
+    "fields": {
+      "transaction_id": 3,
+      "order_id": 3,
+      "payment_method": "Check",
+      "amount": 180000,
+      "status": "Pending"
+    }
+  },
+  {
+    "model": "mybe.transaction",
+    "pk": 4,
+    "fields": {
+      "transaction_id": 4,
+      "order_id": 4,
+      "payment_method": "Check",
+      "amount": 260000,
+      "status": "Paid"
+    }
+  },
+  {
+    "model": "mybe.transaction",
+    "pk": 5,
+    "fields": {
+      "transaction_id": 5,
+      "order_id": 5,
+      "payment_method": "Wire Transfer",
+      "amount": 100000,
+      "status": "Unpaid"
+    }
+  },
+  {
+    "model": "mybe.transaction",
+    "pk": 6,
+    "fields": {
+      "transaction_id": 6,
+      "order_id": 6,
+      "payment_method": "Credit Card",
+      "amount": 800000,
+      "status": "Pending"
+    }
+  },
+  {
+  "model": "mybe.customers",
+  "pk": 1,
+  "fields": {
+    "customer_id": 1,
+    "name": "ABC Construction",
+    "contact": "John Smith",
+    "email": "john@abcconstruction.com",
+    "phone": "+1 (555) 123-4567"
+  }
+},
+{
+  "model": "mybe.customers",
+  "pk": 2,
+  "fields": {
+    "customer_id": 2,
+    "name": "XYZ Excavation",
+    "contact": "Jane Doe",
+    "email": "jane@xyzexcavation.com",
+    "phone": "+1 (555) 987-6543"
+  }
+},
+{
+  "model": "mybe.customers",
+  "pk": 3,
+  "fields": {
+    "customer_id": 3,
+    "name": "DEF Contractors",
+    "contact": "Mike Johnson",
+    "email": "mike@defcontractors.com",
+    "phone": "+1 (555) 789-0123"
+  }
+},
+{
+  "model": "mybe.customers",
+  "pk": 4,
+  "fields": {
+    "customer_id": 4,
+    "name": "GHI Construction",
+    "contact": "Sarah Johnson",
+    "email": "sarah@ghiconstruction.com",
+    "phone": "+1 (555) 111-2222"
+  }
+},
+{
+  "model": "mybe.customers",
+  "pk": 5,
+  "fields": {
+    "customer_id": 5,
+    "name": "JKL Builders",
+    "contact": "Tom Smith",
+    "email": "tom@jklbuilders.com",
+    "phone": "+1 (555) 333-4444"
+  }
+},
+{
+  "model": "mybe.customers",
+  "pk": 6,
+  "fields": {
+    "customer_id": 6,
+    "name": "MNO Contractors",
+    "contact": "Emily Brown",
+    "email": "emily@mnocontractors.com",
+    "phone": "+1 (555) 555-6666"
+  }
+}
+]

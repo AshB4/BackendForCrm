@@ -1,0 +1,35 @@
+from django.shortcuts import render
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+</head>
+<body>
+    <h1>Welcome to Ash's Auctions CRM Backend!</h1>
+    <h3>Feel free to interact</h3>
+    <ul>
+        <!-- <li><a href="{% url 'index' %}">Index</a></li>
+        <li><a href="{% url 'home' %}">Home</a></li> -->
+        <li><a href="{% url 'equipment-type-list-create' %}">Equipment Types</a></li>
+        <li><a href="{% url 'equipment-listing-list-create' %}">Equipment Listings</a></li>
+        <li><a href="{% url 'customer-order-list-create' %}">Customer Orders</a></li>
+        <li><a href="{% url 'customer-list-create' %}">Customers</a></li>
+        <li><a href="{% url 'sales-representative-list-create' %}">Sales Representatives</a></li>
+        <li><a href="{% url 'transaction-list-create' %}">Transactions</a></li>
+    </ul>
+    
+    <form method="post">
+        {% csrf_token %}
+        <!-- Add your form fields here -->
+        <!-- Example: <input type="text" name="form_field_name"> -->
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
+
+    <!-- this is a regular html file used to display dynamic content -->
+<!-- can use jinja to gain access to rewriteable code  -->

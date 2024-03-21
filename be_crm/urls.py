@@ -18,8 +18,8 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path("", admin.site.urls),
-    path("", include("mybe.urls")),  # Add this line to include your app's URLs
+    path("admin/", admin.site.urls),
+    path("", include("mybe.urls")), #includes your apps URL pattern
 ]
 
 # Acts as a routing mechanism for your Django project.

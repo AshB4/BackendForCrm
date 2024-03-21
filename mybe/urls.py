@@ -1,6 +1,7 @@
 from django.urls import path
 from .views import (
     home,
+    index,
     EquipmentTypeListCreate,
     EquipmentTypeRetrieveUpdateDestroy,
     EquipmentListingListCreate,
@@ -17,7 +18,8 @@ from .views import (
 
 # to access RUD name/1/ ex" /transactions/1/
 urlpatterns = [
-    path("home/", home, name="home"),
+    path("", index, name="index"),
+    path(" ", home, name="home"),
     path(
         "equipment/types/",
         EquipmentTypeListCreate.as_view(),
