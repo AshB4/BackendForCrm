@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/5.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Contains configuration settings for your Django project.
@@ -20,6 +20,15 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+STATIC_URL = '/static/'
+
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
+STATICFILES_DIRS = [
+    BASE_DIR
+    / "mybe"
+    / "static",  
+]
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
@@ -48,16 +57,59 @@ INSTALLED_APPS = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    "https://127.0.0.1:8000",
+     "https://localhost:8000",
       "http://localhost:3000"
                         ]
+
+CORS_ALLOW_METHODS = [
+    "DELETE",
+    "GET",
+    "OPTIONS",
+    "PATCH",
+    "POST",
+    "PUT",
+]
+
+CORS_ALLOW_HEADERS = [
+    "ACCEPT",
+    "ACCEPT-ENCODING",
+    "Authorization",
+    "Content-Type",
+    "DNT",
+    "Origin",
+    "User-Agent",
+    "X-CSRFToken",
+]
+
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.SessionAuthentication',  
         'rest_framework.authentication.TokenAuthentication',
     ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny',
+    ],
+    'DEFAULT_PARSER_CLASSES': [
+        'rest_framework.parsers.JSONParser',
+    ],
+    'DEFAULT_RENDERER_CLASSES': [
+        'rest_framework.renderers.JSONRenderer',
+    ],
+    'DEFAULT_THROTTLE_CLASSES': [
+        'rest_framework.throttling.AnonRateThrottle',
+        'rest_framework.throttling.UserRateThrottle',
+    ],
+    'DEFAULT_THROTTLE_RATES': {
+        'anon': '100/day',
+        'user': '1000/day',
+    },
+    'DEFAULT_APPS': [
+        'corsheaders', 
+    ],
 }
+
+
 # Create App: Used python manage.py startapp <app_name> command.
 # Description: Created a new Django app with the specified name.
 # don't for get to "install the app" see above example (ie "mybe")
@@ -70,6 +122,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.security.SecurityMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'be_crm.urls'

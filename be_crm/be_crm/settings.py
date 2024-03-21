@@ -48,6 +48,22 @@ INSTALLED_APPS = [
 ]
 
 CORS_ALLOWED_ORIGINS = ["https://127.0.0.1:8000", "http://localhost:3000"]
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_CREDENTIALS = True
+
+CORS_ALLOW_METHODS = [
+    "GET",
+    "POST",
+    "OPTIONS",
+    # Add other allowed methods as needed
+]
+
+CORS_ALLOW_HEADERS = [
+    "Origin",
+    "Content-Type",
+    "Accept",
+    # Add other allowed headers as needed
+]
 
 # Create App: Used python manage.py startapp <app_name> command.
 # Description: Created a new Django app with the specified name.

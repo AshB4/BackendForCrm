@@ -16,10 +16,10 @@ from .views import (
     TransactionRetrieveUpdateDestroy,
 )
 
-# to access RUD name/1/ ex" /transactions/1/
+# Define URL patterns
 urlpatterns = [
     path("", index, name="index"),
-    path(" ", home, name="home"),
+    path("home/", home, name="home"),  # Change the URL pattern to avoid whitespace
     path(
         "equipment/types/",
         EquipmentTypeListCreate.as_view(),
