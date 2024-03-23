@@ -3,7 +3,7 @@ from .models import (
     EquipmentType,
     EquipmentListing,
     CustomerOrder,
-    Customer,
+    CustomerList,
     SalesRepresentative,
     Transaction,
 )
@@ -29,7 +29,7 @@ class CustomerOrderForm(forms.ModelForm):
 
 class CustomerForm(forms.ModelForm):
     class Meta:
-        model = Customer
+        model = CustomerList
         fields = "__all__"
 
 

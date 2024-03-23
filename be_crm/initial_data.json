@@ -416,5 +416,49 @@
     "email": "emily@mnocontractors.com",
     "phone": "+1 (555) 555-6666"
   }
+},
+{
+  "model": "mybe.customers",
+  "pk": 6,
+  "fields": {
+    "customer_id": 7,
+    "name": "Sara Garcia",
+    "contact": "Sara",
+    "email": "sara@example.com",
+    "phone": "901-234-5678"
+  }
+},
+{
+  "model": "mybe.customers",
+  "pk": 6,
+  "fields": {
+    "customer_id": 8,
+    "name": "David Martinez",
+    "contact": "David",
+    "email": "david@example.com",
+    "phone": "234-567-8901"
+  }
+},
+  {"model": "mybe.customers",
+  "pk": 6,
+  "fields": {
+    "customer_id": 9,
+    "name": "Laura Taylor",
+    "contact": "Laura",
+    "email": "laura@example.com",
+    "phone": "567-890-1234"
+  }
+},
+  {
+    "model": "mybe.customers",
+  "pk": 6,
+  "fields": {
+    "customer_id": 10,
+    "name": "Chris Rodriguez",
+    "contact": "Chris",
+    "email": "chris@example.com",
+    "phone": "890-123-4567"
+  }
 }
 ]
+

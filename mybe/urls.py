@@ -50,9 +50,9 @@ urlpatterns = [
         CustomerOrderRetrieveUpdateDestroy.as_view(),
         name="customer-order-detail",
     ),
-    path("customers/", CustomerListCreate.as_view(), name="customer-list-create"),
+    path("customer-list/", CustomerListCreate.as_view(), name="customer-list-create"),
     path(
-        "customers/<int:pk>/",
+        "customers-list<int:pk>/",
         CustomerRetrieveUpdateDestroy.as_view(),
         name="customer-detail",
     ),

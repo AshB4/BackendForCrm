@@ -1,6 +1,7 @@
 from django.db import models
 from jsonfield import JSONField
 
+
 class EquipmentType(models.Model):
     type_id = models.IntegerField(primary_key=True)
     type_name = models.CharField(max_length=100)
@@ -29,10 +30,12 @@ class CustomerOrder(models.Model):
     quantity = models.IntegerField()
     total_price = models.DecimalField(max_digits=10, decimal_places=2)
 
-def __str__(self):
-        return f"Order {self.order_id} - {self.quantity} x {self.listing.make} {self.listing.model}: ${self.total_price}"
 
-class Customer(models.Model):
+def __str__(self):
+    return f"Order {self.order_id} - {self.quantity} x {self.listing.make} {self.listing.model}: ${self.total_price}"
+
+
+class CustomerList(models.Model):
     customer_id = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=100)
     contact = models.CharField(max_length=100)
@@ -48,7 +51,6 @@ class Customer(models.Model):
 
 class SalesRepresentative(models.Model):
     rep_id = models.IntegerField(primary_key=True)
-    #rep_number = models.IntegerField(unique=True)...might need?
     name = models.CharField(max_length=100)
     email = models.EmailField()
     phone = models.CharField(max_length=20)

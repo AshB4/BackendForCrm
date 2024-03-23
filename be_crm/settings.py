@@ -57,7 +57,8 @@ INSTALLED_APPS = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-     "https://localhost:8000",
+     "http://127.0.0.1:8000",
+     "http://localhost:8000",
       "http://localhost:3000"
                         ]
 
@@ -65,10 +66,25 @@ CORS_ALLOW_METHODS = [
     "DELETE",
     "GET",
     "OPTIONS",
-    "PATCH",
+    # "PATCH",
     "POST",
-    "PUT",
+    "PUT"
 ]
+
+# send various types of HTTP requests using different methods:
+
+# 1. **GET**: Used to request data from a specified resource.
+# 2. **POST**: Used to submit data to be processed to a specified resource.
+# 3. **PUT**: Used to update data on a specified resource. The entire resource is replaced with the data sent in the request.
+# 4. **PATCH**: Similar to PUT, but only updates the fields specified in the request. It's used to apply partial modifications to a resource.
+# 5. **DELETE**: Used to delete a specified resource.
+# 6. **HEAD**: Similar to GET, but only retrieves the headers of the response without the body.
+# 7. **OPTIONS**: Used to request the server to provide the available HTTP methods for a specified resource.
+
+# These methods allow you to interact with APIs and test different functionalities provided by the server.
+#  You can choose the appropriate method based on the action you want to perform
+#  (e.g., retrieving data, creating data, updating data, deleting data).
+
 
 CORS_ALLOW_HEADERS = [
     "ACCEPT",

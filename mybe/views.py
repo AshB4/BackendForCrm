@@ -6,7 +6,7 @@ from .models import (
     EquipmentType,
     EquipmentListing,
     CustomerOrder,
-    Customer,
+    CustomerList,
     SalesRepresentative,
     Transaction,
 )
@@ -14,7 +14,7 @@ from .models import (
     EquipmentType,
     EquipmentListing,
     CustomerOrder,
-    Customer,
+    CustomerList,
     SalesRepresentative,
     Transaction,
 )
@@ -59,12 +59,12 @@ class CustomerOrderRetrieveUpdateDestroy(generics.RetrieveUpdateDestroyAPIView):
 
 
 class CustomerListCreate(generics.ListCreateAPIView):
-    queryset = Customer.objects.all()
+    queryset = CustomerList.objects.all()
     serializer_class = CustomerSerializer
 
 
 class CustomerRetrieveUpdateDestroy(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Customer.objects.all()
+    queryset = CustomerList.objects.all()
     serializer_class = CustomerSerializer
 
 
@@ -92,7 +92,7 @@ class SearchList(generics.ListAPIView):
     serializer_class = CustomerSerializer
 
     def get_queryset(self):
-        queryset = Customer.objects.all()
+        queryset = CustomerList.objects.all()
         search_query = self.request.query_params.get("q", None)
         if search_query:
             queryset = queryset.filter(
@@ -117,6 +117,8 @@ class EquipmentListingSearchList(generics.ListAPIView):
 
 def index(request):
     return home(request)
+
+
 # HttpResponse("Welcome to the backend of your CRM application.")
 
 

@@ -1,9 +1,13 @@
 from rest_framework import serializers
+from rest_framework import viewsets
+from rest_framework.response import Response
+from rest_framework import status
+from .serializers import TransactionSerializer
 from .models import (
     EquipmentType,
     EquipmentListing,
     CustomerOrder,
-    Customer,
+    Customers,
     SalesRepresentative,
     Transaction,
 )
@@ -31,7 +35,7 @@ class CustomerSerializer(serializers.ModelSerializer):
     formatted_phone = serializers.CharField()
 
     class Meta:
-        model = Customer
+        model = Customers
         fields = ["customer_id", "name", "contact", "email", "phone", "formatted_phone"]
 
 

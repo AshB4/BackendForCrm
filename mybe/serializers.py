@@ -3,7 +3,7 @@ from .models import (
     EquipmentType,
     EquipmentListing,
     CustomerOrder,
-    Customer,
+    CustomerList,
     SalesRepresentative,
     Transaction,
 )
@@ -31,7 +31,7 @@ class CustomerSerializer(serializers.ModelSerializer):
     formatted_phone = serializers.CharField()
 
     class Meta:
-        model = Customer
+        model = CustomerList
         fields = ["customer_id", "name", "contact", "email", "phone", "formatted_phone"]
 
 

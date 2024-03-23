@@ -5,7 +5,7 @@ from mybe.models import (
     EquipmentType,
     EquipmentListing,
     CustomerOrder,
-    Customer,
+    Customers,
     SalesRepresentative,
     Transaction,
 )
@@ -106,6 +106,7 @@ class Command(BaseCommand):
                 "email": "emily@mnocontractors.com",
                 "phone": "+1 (555) 555-6666",
             },
+            
         ]
 
         for data in customer_data:

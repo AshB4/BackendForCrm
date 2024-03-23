@@ -1,12 +1,14 @@
-from django.shortcuts import render
+from django.shortcuts import render, viewsets, status
 from rest_framework import generics , status
 from django.http import JsonResponse
 from django.db.models import Q
+from rest_framework.response import Response
+from django.shortcuts import get_object_or_404
 from .models import (
     EquipmentType,
     EquipmentListing,
     CustomerOrder,
-    Customer,
+    Customers,
     SalesRepresentative,
     Transaction,
 )
@@ -51,12 +53,12 @@ class CustomerOrderRetrieveUpdateDestroy(generics.RetrieveUpdateDestroyAPIView):
 
 
 class CustomerListCreate(generics.ListCreateAPIView):
-    queryset = Customer.objects.all()
+    queryset = Customers.objects.all()
     serializer_class = CustomerSerializer
 
 
 class CustomerRetrieveUpdateDestroy(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Customer.objects.all()
+    queryset = Customers.objects.all()
     serializer_class = CustomerSerializer
 
 
@@ -84,7 +86,7 @@ class SearchList(generics.ListAPIView):
     serializer_class = CustomerSerializer
 
     def get_queryset(self):
-        queryset = Customer.objects.all()
+        queryset = Customers.objects.all()
         search_query = self.request.query_params.get("q", None)
         if search_query:
             queryset = queryset.filter(
@@ -105,3 +107,44 @@ class EquipmentListingSearchList(generics.ListAPIView):
                 Q(make__icontains=search_query) | Q(model__icontains=search_query)
             )
         return queryset
+    
+class TransactionViewSet(viewsets.ViewSet):
+
+     def list(self, request):
+        queryset = Transaction.objects.all()
+        serializer = TransactionSerializer(queryset, many=True)
+        return Response(serializer.data)
+
+def create(self, request):
+        serializer = TransactionSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+        def retrieve(self, request, pk=None):
+            queryset = Transaction.objects.all()
+            transaction = get_object_or_404(queryset, pk=pk)
+            serializer = TransactionSerializer(transaction)
+            return Response(serializer.data)
+
+        def update(self, request, pk=None):
+            transaction = Transaction.objects.get(pk=pk)
+            serializer = TransactionSerializer(transaction, data=request.data)
+            if serializer.is_valid():
+                serializer.save()
+                return Response(serializer.data)
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+        def partial_update(self, request, pk=None):
+            transaction = Transaction.objects.get(pk=pk)
+            serializer = TransactionSerializer(transaction, data=request.data, partial=True)
+            if serializer.is_valid():
+                serializer.save()
+                return Response(serializer.data)
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+        def destroy(self, request, pk=None):
+            transaction = Transaction.objects.get(pk=pk)
+            transaction.delete()
+            return Response(status=status.HTTP_204_NO_CONTENT)

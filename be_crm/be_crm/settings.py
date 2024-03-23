@@ -55,6 +55,10 @@ CORS_ALLOW_METHODS = [
     "GET",
     "POST",
     "OPTIONS",
+    "PUT",
+    "DELETE",
+    "HEAD",
+    "PATCH",    
     # Add other allowed methods as needed
 ]
 
