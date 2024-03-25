@@ -1,4 +1,4 @@
-from django.shortcuts import render, viewsets, status
+from django.shortcuts import render, status
 from rest_framework import generics , status
 from django.http import JsonResponse
 from django.db.models import Q
@@ -8,7 +8,7 @@ from .models import (
     EquipmentType,
     EquipmentListing,
     CustomerOrder,
-    Customers,
+    CustomerList,
     SalesRepresentative,
     Transaction,
 )
@@ -16,7 +16,7 @@ from .serializers import (
     EquipmentTypeSerializer,
     EquipmentListingSerializer,
     CustomerOrderSerializer,
-    CustomerSerializer,
+    CustomerListSerializer,
     SalesRepresentativeSerializer,
     TransactionSerializer,
 )
@@ -53,13 +53,13 @@ class CustomerOrderRetrieveUpdateDestroy(generics.RetrieveUpdateDestroyAPIView):
 
 
 class CustomerListCreate(generics.ListCreateAPIView):
-    queryset = Customers.objects.all()
-    serializer_class = CustomerSerializer
+    queryset = CustomerList.objects.all()
+    serializer_class = CustomerListSerializer
 
 
-class CustomerRetrieveUpdateDestroy(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Customers.objects.all()
-    serializer_class = CustomerSerializer
+class CustomerListRetrieveUpdateDestroy(generics.RetrieveUpdateDestroyAPIView):
+    queryset = CustomerList.objects.all()
+    serializer_class = CustomerListSerializer
 
 
 class SalesRepresentativeListCreate(generics.ListCreateAPIView):
@@ -83,10 +83,10 @@ class TransactionRetrieveUpdateDestroy(generics.RetrieveUpdateDestroyAPIView):
 
 
 class SearchList(generics.ListAPIView):
-    serializer_class = CustomerSerializer
+    serializer_class = CustomerListSerializer
 
     def get_queryset(self):
-        queryset = Customers.objects.all()
+        queryset = CustomerList.objects.all()
         search_query = self.request.query_params.get("q", None)
         if search_query:
             queryset = queryset.filter(
@@ -107,13 +107,21 @@ class EquipmentListingSearchList(generics.ListAPIView):
                 Q(make__icontains=search_query) | Q(model__icontains=search_query)
             )
         return queryset
-    
-class TransactionViewSet(viewsets.ViewSet):
 
-     def list(self, request):
+
+class TransactionViewSet(object):
+    def list(self, request):
         queryset = Transaction.objects.all()
         serializer = TransactionSerializer(queryset, many=True)
         return Response(serializer.data)
+
+
+# class TransactionViewSet(viewsets.ViewSet):
+
+#      def list(self, request):
+#         queryset = Transaction.objects.all()
+#         serializer = TransactionSerializer(queryset, many=True)
+#         return Response(serializer.data)
 
 def create(self, request):
         serializer = TransactionSerializer(data=request.data)

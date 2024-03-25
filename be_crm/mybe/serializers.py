@@ -1,5 +1,4 @@
 from rest_framework import serializers
-from rest_framework import viewsets
 from rest_framework.response import Response
 from rest_framework import status
 from .serializers import TransactionSerializer
@@ -7,7 +6,7 @@ from .models import (
     EquipmentType,
     EquipmentListing,
     CustomerOrder,
-    Customers,
+    CustomerList,
     SalesRepresentative,
     Transaction,
 )
@@ -31,11 +30,11 @@ class CustomerOrderSerializer(serializers.ModelSerializer):
         fields = ["order_id", "listing_id", "customer", "quantity", "total_price"]
 
 
-class CustomerSerializer(serializers.ModelSerializer):
+class CustomerListSerializer(serializers.ModelSerializer):
     formatted_phone = serializers.CharField()
 
     class Meta:
-        model = Customers
+        model = CustomerList
         fields = ["customer_id", "name", "contact", "email", "phone", "formatted_phone"]
 
 

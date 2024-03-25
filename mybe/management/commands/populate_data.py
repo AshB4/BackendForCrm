@@ -5,7 +5,7 @@ from mybe.models import (
     EquipmentType,
     EquipmentListing,
     CustomerOrder,
-    Customer,
+    CustomerList,
     SalesRepresentative,
     Transaction,
 )
@@ -63,7 +63,7 @@ class Command(BaseCommand):
             cursor.execute("INSERT INTO mybe_customerorder (order_id, listing_id, customer, quantity, total_price) VALUES (?, ?, ?, ?, ?)", 
                            (data['order_id'], data['listing_id'], data['customer'], data['quantity'], data['total_price']))
 
-        customer_data = [
+        customer_list_data = [
             {"customer_id": 1, "name": "ABC Construction", "contact": "John Smith", "email": "john@abcconstruction.com", "phone": "+1 (555) 123-4567"},
             {"customer_id": 2, "name": "XYZ Excavation", "contact": "Jane Doe", "email": "jane@xyzexcavation.com", "phone": "+1 (555) 987-6543"},
             {"customer_id": 3, "name": "DEF Contractors", "contact": "Mike Johnson", "email": "mike@defcontractors.com", "phone": "+1 (555) 789-0123"},
@@ -72,7 +72,7 @@ class Command(BaseCommand):
             {"customer_id": 6, "name": "MNO Contractors", "contact": "Emily Brown", "email": "emily@mnocontractors.com", "phone": "+1 (555) 555-6666"},
         ]
 
-        for data in customer_data:
+        for data in customer_list_data:
             cursor.execute("INSERT INTO mybe_customer (customer_id, name, contact, email, phone) VALUES (?, ?, ?, ?, ?)", 
                            (data['customer_id'], data['name'], data['contact'], data['email'], data['phone']))
 

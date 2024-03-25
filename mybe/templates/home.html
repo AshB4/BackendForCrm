@@ -13,21 +13,21 @@ from django.shortcuts import render
     <h3>Feel free to interact</h3>
     <ul>
         <!-- <li><a href="{% url 'index' %}">Index</a></li>
-        <li><a href="{% url 'home' %}">Home</a></li> -->
+        <li><a href="{% url 'home' %}">Home</a></li>  -->
         <li><a href="{% url 'equipment-type-list-create' %}">Equipment Types</a></li>
         <li><a href="{% url 'equipment-listing-list-create' %}">Equipment Listings</a></li>
         <li><a href="{% url 'customer-order-list-create' %}">Customer Orders</a></li>
-        <li><a href="{% url 'customer-list-create' %}">Customers</a></li>
+        <li><a href="{% url 'customer-list-create' %}">Customer List</a></li>
         <li><a href="{% url 'sales-representative-list-create' %}">Sales Representatives</a></li>
         <li><a href="{% url 'transaction-list-create' %}">Transactions</a></li>
     </ul>
     
     <form method="post">
         {% csrf_token %}
-        <!-- Add your form fields here -->
-        <!-- Example: <input type="text" name="form_field_name"> -->
+        <!-- Add form fields here -->
         <input type="submit" value="Submit">
     </form>
+
     <script src="/Users/ash/Desktop/AuctionCRM/BackendForCrm/be_crm/mybe/static/script.js"></script>"></script>
 </body>
 </html>

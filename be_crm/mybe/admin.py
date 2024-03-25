@@ -3,7 +3,7 @@ from .models import (
     EquipmentType,
     EquipmentListing,
     CustomerOrder,
-    Customers,
+    CustomerList,
     SalesRepresentative,
     Transaction,
 )
@@ -12,7 +12,7 @@ from .models import (
 admin.site.register(EquipmentType)
 admin.site.register(EquipmentListing)
 admin.site.register(CustomerOrder)
-admin.site.register(Customers)
+admin.site.register(CustomerList)
 admin.site.register(SalesRepresentative)
 admin.site.register(Transaction)
 

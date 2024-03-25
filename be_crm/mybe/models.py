@@ -32,7 +32,7 @@ class CustomerOrder(models.Model):
 def __str__(self):
         return f"Order {self.order_id} - {self.quantity} x {self.listing.make} {self.listing.model}: ${self.total_price}"
 
-class Customers(models.Model):
+class CustomerList(models.Model):
     customer_id = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=100)
     contact = models.CharField(max_length=100)

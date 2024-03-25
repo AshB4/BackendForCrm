@@ -8,7 +8,7 @@ from .views import (
     CustomerOrderListCreate,
     CustomerOrderRetrieveUpdateDestroy,
     CustomerListCreate,
-    CustomerRetrieveUpdateDestroy,
+    CustomerListRetrieveUpdateDestroy,
     SalesRepresentativeListCreate,
     SalesRepresentativeRetrieveUpdateDestroy,
     TransactionListCreate,
@@ -48,10 +48,15 @@ urlpatterns = [
         CustomerOrderRetrieveUpdateDestroy.as_view(),
         name="customer-order-detail",
     ),
-    path("customers/", CustomerListCreate.as_view(), name="customer-list-create"),
     path(
-        "customers/<int:pk>/",
-        CustomerRetrieveUpdateDestroy.as_view(),
+        "customer/orders/",
+        CustomerListRetrieveUpdateDestroy.as_view(),
+        name="customer-list-detail",
+    ),
+    path("customer-list/", CustomerListCreate.as_view(), name="customer-list-create"),
+    path(
+        "customer-list/<int:pk>/",
+        CustomerListRetrieveUpdateDestroy.as_view(),
         name="customer-detail",
     ),
     path(

@@ -5,7 +5,7 @@ from mybe.models import (
     EquipmentType,
     EquipmentListing,
     CustomerOrder,
-    Customer,
+    CustomerList,
     SalesRepresentative,
     Transaction,
 )
