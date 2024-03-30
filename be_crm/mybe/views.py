@@ -1,9 +1,5 @@
-from django.shortcuts import render, get_object_or_404
-from rest_framework import generics, status
-from django.http import JsonResponse
-from rest_framework.decorators import api_view, permission_classes
-from rest_framework.permissions import IsAuthenticated
-from rest_framework.response import Response
+
+from rest_framework import generics
 from django.db.models import Q
 from .models import (
     EquipmentType,
@@ -31,24 +27,6 @@ class EquipmentTypeListCreate(generics.ListCreateAPIView):
 class EquipmentTypeRetrieveUpdateDestroy(generics.RetrieveUpdateDestroyAPIView):
     queryset = EquipmentType.objects.all()
     serializer_class = EquipmentTypeSerializer
-
-
-def delete_equipment_type(request, type_id):
-    # Retrieve the equipment type object or return 404 if not found
-    equipment_type = get_object_or_404(EquipmentType, pk=type_id)
-    # Perform deletion logic
-    equipment_type.delete()
-    # Return success response
-    return JsonResponse({"message": "Equipment type deleted successfully"}, status=204)
-
-
-# def delete(self, request, *args, **kwargs):
-#     instance = self.get_object()
-#     self.perform_destroy(instance)
-#     return JsonResponse(
-#         "Equipment type deleted successfully.", status=status.HTTP_204_NO_CONTENT
-#     )
-
 
 class EquipmentListingListCreate(generics.ListCreateAPIView):
     queryset = EquipmentListing.objects.all()

@@ -32,12 +32,6 @@ urlpatterns = [
         name="equipment-type-detail",
     ),
     path(
-        "equipment/types/<int:type_id>/",
-        delete_equipment_type,
-        name="delete_equipment_type",
-    ),
-    # Other URL patterns...
-    path(
         "equipment/listings/",
         EquipmentListingListCreate.as_view(),
         name="equipment-listing-list-create",
