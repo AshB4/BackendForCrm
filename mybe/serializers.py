@@ -36,8 +36,8 @@ class CustomerSerializer(serializers.ModelSerializer):
 
 
 class SalesRepresentativeSerializer(serializers.ModelSerializer):
-    formatted_phone = serializers.CharField()
-    formatted_email = serializers.EmailField()
+    # formatted_phone = serializers.CharField()
+    # formatted_email = serializers.EmailField()
 
     class Meta:
         model = SalesRepresentative
@@ -46,8 +46,6 @@ class SalesRepresentativeSerializer(serializers.ModelSerializer):
             "name",
             "email",
             "phone",
-            "formatted_phone",
-            "formatted_email",
         ]
 
 

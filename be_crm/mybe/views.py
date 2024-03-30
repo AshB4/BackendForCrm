@@ -78,28 +78,28 @@ class TransactionRetrieveUpdateDestroy(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = TransactionSerializer
 
 
-class SearchList(generics.ListAPIView):
-    serializer_class = CustomerListSerializer
+# class SearchList(generics.ListAPIView):
+#     serializer_class = CustomerListSerializer
 
-    def get_queryset(self):
-        queryset = CustomerList.objects.all()
-        search_query = self.request.query_params.get("q", None)
-        if search_query:
-            queryset = queryset.filter(
-                Q(field1__icontains=search_query)
-                | Q(field2__icontains=search_query)  # Add more fields if needed
-            )
-        return queryset
+#     def get_queryset(self):
+#         queryset = CustomerList.objects.all()
+#         search_query = self.request.query_params.get("q", None)
+#         if search_query:
+#             queryset = queryset.filter(
+#                 Q(field1__icontains=search_query)
+#                 | Q(field2__icontains=search_query)  # Add more fields if needed
+#             )
+#         return queryset
 
 
 class EquipmentListingSearchList(generics.ListAPIView):
     serializer_class = EquipmentListingSerializer
 
-    def get_queryset(self):
-        queryset = EquipmentListing.objects.all()
-        search_query = self.request.query_params.get("q", None)
-        if search_query:
-            queryset = queryset.filter(
-                Q(make__icontains=search_query) | Q(model__icontains=search_query)
-            )
-        return queryset
+    # def get_queryset(self):
+    #     queryset = EquipmentListing.objects.all()
+    #     search_query = self.request.query_params.get("q", None)
+    #     if search_query:
+    #         queryset = queryset.filter(
+    #             Q(make__icontains=search_query) | Q(model__icontains=search_query)
+    #         )
+    #     return queryset

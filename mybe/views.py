@@ -81,6 +81,15 @@ class SalesRepresentativeRetrieveUpdateDestroy(generics.RetrieveUpdateDestroyAPI
     serializer_class = SalesRepresentativeSerializer
 
 
+def delete_sales_rep(request, type_id):
+    # Retrieve the equipment type object or return 404 if not found
+    delete_sales_rep = get_object_or_404(SalesRepresentative, pk=type_id)
+    # Perform deletion logic
+    delete_sales_rep.delete()
+    # Return success response
+    return JsonResponse({"message": "Sales Representative deleted successfully"}, status=204)
+
+
 class TransactionListCreate(generics.ListCreateAPIView):
     queryset = Transaction.objects.all()
     serializer_class = TransactionSerializer

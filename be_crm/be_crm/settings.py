@@ -90,7 +90,6 @@ CORS_ALLOW_METHODS = [
     "DELETE",
     "HEAD",
     "PATCH",    
-    # Add other allowed methods as needed
 ]
 
 CORS_ALLOW_HEADERS = [

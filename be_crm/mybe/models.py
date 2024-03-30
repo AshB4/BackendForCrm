@@ -17,9 +17,8 @@ class EquipmentListing(models.Model):
     year = models.IntegerField()
     price = models.DecimalField(max_digits=10, decimal_places=2)
 
-
 def __str__(self):
-    return f"{self.make} {self.model} ({self.year}) - ${self.price}"
+    return f"{self.listing_id}: {self.make} {self.model} ({self.year}) - ${self.price}"
 
 
 class CustomerOrder(models.Model):
@@ -39,7 +38,7 @@ class CustomerList(models.Model):
     email = models.EmailField()
     phone = models.CharField(max_length=20)
 
-    def formatted_phone(self):
+    def phone(self):
         return "-".join([self.phone[:3], self.phone[3:6], self.phone[6:]])
 
     def __str__(self):
@@ -53,14 +52,7 @@ class SalesRepresentative(models.Model):
     phone = models.CharField(max_length=20)
 
     def __str__(self):
-        return self.name
-
-    def formatted_phone(self):
-        return f"+1 ({self.phone[:3]}) {self.phone[3:6]}-{self.phone[6:]}"
-
-    def formatted_email(self):
-        return self.email
-
+        return f"{self.rep_id}: {self.name} - {self.email} ({self.phone})"
 
 class Transaction(models.Model):
     transaction_id = models.IntegerField(primary_key=True)
