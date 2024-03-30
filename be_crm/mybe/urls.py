@@ -13,6 +13,7 @@ from .views import (
     SalesRepresentativeRetrieveUpdateDestroy,
     TransactionListCreate,
     TransactionRetrieveUpdateDestroy,
+    delete_equipment_type,
 )
 
 # to access RUD name/1/ ex" /transactions/1/
@@ -27,6 +28,11 @@ urlpatterns = [
         "equipment/types/<int:pk>/",
         EquipmentTypeRetrieveUpdateDestroy.as_view(),
         name="equipment-type-detail",
+    ),
+    path(
+        "equipment/types/<int:type_id>/",
+        delete_equipment_type,
+        name="equipment-type-delete",
     ),
     path(
         "equipment/listings/",

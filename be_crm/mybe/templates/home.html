@@ -1,5 +1,8 @@
 from django.shortcuts import render
 
+{% load static %}
+<script src="{% static 'js/your_script.js' %}"></script>
+
 def home_view(request):
     return render(request, 'home.html')
 

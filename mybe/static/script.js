@@ -1,23 +1,16 @@
-// /** @format */
+// var csrftoken = getCookie('csrftoken');
 
-// // path/to/your/script.js
-
-// var xhr = new XMLHttpRequest();
-// xhr.open("GET", "http://example.com/api/data", true);
-
-// xhr.onload = function () {
-// 	if (xhr.status >= 200 && xhr.status < 300) {
-// 		// Request was successful
-// 		console.log(xhr.responseText);
-// 	} else {
-// 		// Request failed
-// 		console.error("Request failed with status", xhr.status);
-// 	}
-// };
-
-// xhr.onerror = function () {
-// 	// Network error
-// 	console.error("Network error occurred");
-// };
-
-// xhr.send();
+// function getCookie(name) {
+//     var cookieValue = null;
+//     if (document.cookie && document.cookie !== '') {
+//         var cookies = document.cookie.split(';');
+//         for (var i = 0; i < cookies.length; i++) {
+//             var cookie = cookies[i].trim();
+//             if (cookie.substring(0, name.length + 1) === (name + '=')) {
+//                 cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+//                 break;
+//             }
+//         }
+//     }
+//     return cookieValue;
+// }

@@ -12,7 +12,7 @@ from .models import (
 class EquipmentTypeSerializer(serializers.ModelSerializer):
     class Meta:
         model = EquipmentType
-        fields = ["type_id", "type_name"]
+        fields = '__all__' #["type_id", "type_name"]
 
 
 class EquipmentListingSerializer(serializers.ModelSerializer):
