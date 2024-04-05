@@ -9,6 +9,7 @@ Starting the Backend (BackendforCRM):
 
 Open a new terminal or command prompt on your computer, if you haven't already done so.
 Go to the folder where the "BackendforCRM" backend project is located.
+In the terminal run python3 -m pip install -r requirements.txt to download the requirements for this project.
 This is usually a folder with all the code files for the backend application.
 Inside this folder, there should be a file named manage.py.
 This file is the main entry point for Django projects.
