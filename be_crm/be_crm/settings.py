@@ -12,6 +12,50 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 
+### Explanation of Django Settings:
+
+#### Technical Perspective:
+
+# 1. **Folder Structure:**
+#    - The `be_crm` project follows the standard structure of a Django project, with directories for settings, URLs, WSGI application, and app configurations.
+
+# 2. **Settings Configuration:**
+#    - The `settings.py` file contains crucial configuration settings for the Django project, such as database setup, middleware, installed applications, security settings, CORS (Cross-Origin Resource Sharing) configurations, and more.
+
+# 3. **Installed Apps:**
+#    - `INSTALLED_APPS` lists all the Django apps installed in the project, including default Django apps like authentication, sessions, etc., and custom apps like `mybe` created using `startapp` command.
+
+# 4. **Middleware:**
+#    - `MIDDLEWARE` includes middleware classes that process requests and responses, performing tasks like security, session management, authentication, and CORS handling.
+
+# 5. **Security Settings:**
+#    - `SECRET_KEY` is a cryptographic key used for session signing and other security measures.
+#    - `DEBUG` is set to `True` for development purposes. It should be set to `False` in production.
+#    - `ALLOWED_HOSTS` specifies which host/domain names can access the Django application.
+
+# 6. **Database Configuration:**
+#    - `DATABASES` defines the database engine, name, user, password, and other settings. In this case, it's using SQLite as the default database.
+
+# #### Non-Technical Perspective:
+
+# 1. **Project Structure:**
+#    - The project follows a structured layout, making it easy to organize and maintain code files and configurations.
+
+# 2. **Settings Overview:**
+#    - The `settings.py` file acts as the control center for the Django project, allowing customization of various aspects like database, security, and middleware.
+
+# 3. **Installed Features:**
+#    - Django comes with built-in features like authentication, sessions, and admin interface, which are automatically included in the project.
+#    - Additional features can be added by installing custom apps, as listed in the `INSTALLED_APPS` section.
+
+# 4. **Security and CORS:**
+#    - Security measures like secret key, debugging settings, and allowed hosts ensure that the application is secure and accessible only from trusted sources.
+#    - CORS settings allow cross-origin requests from specified origins, ensuring compatibility with frontend applications hosted on different domains.
+
+# 5. **Database Setup:**
+#    - Configuration for the default database engine (SQLite) is provided, making it easy to get started with database-backed applications.
+
+
 # Contains configuration settings for your Django project.
 # Includes settings such as database configuration, static files, middleware, installed applications, timezone, language, etc.
 # Acts as the main configuration file for your Django project.
