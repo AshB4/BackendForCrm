@@ -31,11 +31,9 @@ class CustomerOrderSerializer(serializers.ModelSerializer):
 
 
 class CustomerListSerializer(serializers.ModelSerializer):
-    formatted_phone = serializers.CharField()
-
     class Meta:
         model = CustomerList
-        fields = ["customer_id", "name", "contact", "email", "phone", "formatted_phone"]
+        fields = ["customer_id", "name", "contact", "email", "phone"]
 
 
 class SalesRepresentativeSerializer(serializers.ModelSerializer):
@@ -63,5 +61,4 @@ class TransactionSerializer(serializers.ModelSerializer):
             "payment_method",
             "amount",
             "status",
-            "formatted_amount",
         ]

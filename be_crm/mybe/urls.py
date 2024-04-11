@@ -29,31 +29,30 @@ urlpatterns = [
         name="equipment-type-detail",
     ),
     path(
-        "equipment/listings/",
+        "equipment-listings/",
         EquipmentListingListCreate.as_view(),
         name="equipment-listing-list-create",
     ),
     path(
-        "equipment/listings/<int:pk>/",
+        "equipment-listings/<int:pk>/",
         EquipmentListingRetrieveUpdateDestroy.as_view(),
         name="equipment-listing-detail",
     ),
     path(
-        "customer/orders/",
+        "customer-orders/",
         CustomerOrderListCreate.as_view(),
         name="customer-order-list-create",
     ),
     path(
-        "customer/orders/<int:pk>/",
+        "customer-orders/<int:pk>/",
         CustomerOrderRetrieveUpdateDestroy.as_view(),
         name="customer-order-detail",
     ),
     path(
-        "customer/orders/",
-        CustomerListRetrieveUpdateDestroy.as_view(),
-        name="customer-list-detail",
+        "customer-list/",
+          CustomerListCreate.as_view(),
+          name="customer-list-create"
     ),
-    path("customer-list/", CustomerListCreate.as_view(), name="customer-list-create"),
     path(
         "customer-list/<int:pk>/",
         CustomerListRetrieveUpdateDestroy.as_view(),

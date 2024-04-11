@@ -16,10 +16,11 @@ from .views import (
     TransactionRetrieveUpdateDestroy,
 )
 
-# Define URL patterns
 urlpatterns = [
+    # Home and index paths
     path("", index, name="index"),
-    path("home/", home, name="home"),  # Change the URL pattern to avoid whitespace
+    path("home/", home, name="home"),
+    # Equipment type paths
     path(
         "equipment/types/",
         EquipmentTypeListCreate.as_view(),
@@ -30,6 +31,7 @@ urlpatterns = [
         EquipmentTypeRetrieveUpdateDestroy.as_view(),
         name="equipment-type-detail",
     ),
+    # Equipment listing paths
     path(
         "equipment/listings/",
         EquipmentListingListCreate.as_view(),
@@ -40,6 +42,7 @@ urlpatterns = [
         EquipmentListingRetrieveUpdateDestroy.as_view(),
         name="equipment-listing-detail",
     ),
+    # Customer order paths
     path(
         "customer/orders/",
         CustomerOrderListCreate.as_view(),
@@ -50,12 +53,15 @@ urlpatterns = [
         CustomerOrderRetrieveUpdateDestroy.as_view(),
         name="customer-order-detail",
     ),
+    # Customer paths
     path("customer-list/", CustomerListCreate.as_view(), name="customer-list-create"),
     path(
-        "customers-list<int:pk>/",
+        "customer-list/<int:pk>/",
         CustomerRetrieveUpdateDestroy.as_view(),
         name="customer-detail",
     ),
+    
+    # Sales representative paths
     path(
         "sales-representatives/",
         SalesRepresentativeListCreate.as_view(),
@@ -66,6 +72,7 @@ urlpatterns = [
         SalesRepresentativeRetrieveUpdateDestroy.as_view(),
         name="sales-representative-detail",
     ),
+    # Transaction paths
     path(
         "transactions/", TransactionListCreate.as_view(), name="transaction-list-create"
     ),

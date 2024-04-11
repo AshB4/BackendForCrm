@@ -27,12 +27,12 @@ class CustomerOrderSerializer(serializers.ModelSerializer):
         fields = ["order_id", "listing_id", "customer", "quantity", "total_price"]
 
 
-class CustomerSerializer(serializers.ModelSerializer):
-    formatted_phone = serializers.CharField()
+class CustomerListSerializer(serializers.ModelSerializer):
+    phone = serializers.CharField()
 
     class Meta:
         model = CustomerList
-        fields = ["customer_id", "name", "contact", "email", "phone", "formatted_phone"]
+        fields = ["customer_id", "name", "contact", "email", "phone"]
 
 
 class SalesRepresentativeSerializer(serializers.ModelSerializer):

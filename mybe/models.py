@@ -42,7 +42,8 @@ class CustomerList(models.Model):
     email = models.EmailField()
     phone = models.CharField(max_length=20)
 
-    def formatted_phone(self):
+    def format_phone(self):
+        # Method implementation to format the phone number
         return "-".join([self.phone[:3], self.phone[3:6], self.phone[6:]])
 
     def __str__(self):
@@ -57,7 +58,6 @@ class SalesRepresentative(models.Model):
 
     def __str__(self):
         return f"{self.rep_id}: {self.name} - {self.email} - {self.phone})"
-
 
 
 class Transaction(models.Model):
