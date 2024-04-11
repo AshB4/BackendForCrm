@@ -4,7 +4,6 @@ from .views import (
     index,
     EquipmentTypeListCreate,
     EquipmentTypeRetrieveUpdateDestroy,
-    delete_equipment_type,
     EquipmentListingListCreate,
     EquipmentListingRetrieveUpdateDestroy,
     CustomerOrderListCreate,

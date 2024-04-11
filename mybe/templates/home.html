@@ -1,4 +1,4 @@
-from django.shortcuts import render
+
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -12,8 +12,8 @@ from django.shortcuts import render
     <h1>Welcome to Ash's Auctions CRM Backend!</h1>
     <h3>Feel free to interact</h3>
     <ul>
-        <!-- <li><a href="{% url 'index' %}">Index</a></li>
-        <li><a href="{% url 'home' %}">Home</a></li>  -->
+        <li><a href="{% url 'index' %}">Index</a></li>
+        <li><a href="{% url 'home' %}">Home</a></li> 
         <li><a href="{% url 'equipment-type-list-create' %}">Equipment Types</a></li>
         <li><a href="{% url 'equipment-listing-list-create' %}">Equipment Listings</a></li>
         <li><a href="{% url 'customer-order-list-create' %}">Customer Orders</a></li>
