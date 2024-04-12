@@ -1,4 +1,4 @@
 Django==3.2.12                      # Web framework for backend development
 djangorestframework==3.12.4          # Toolkit for building Web APIs in Django
 django-cors-headers==3.7.0                  # Django app for handling Cross-Origin Resource Sharing (CORS)
-jsonfield==3.12     # Stores flexible and dynamic data within Django models.
+jsonfield==3.1.0   # Stores flexible and dynamic data within Django models.

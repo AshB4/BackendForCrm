@@ -68,10 +68,10 @@ class Transaction(models.Model):
     status = models.CharField(max_length=100)
 
     def __str__(self):
-        return f"Transaction ID: {self.transaction_id}, Order ID: {self.order_id}, Status: {self.status}"
+        return f"Transaction ID: {self.transaction_id}, Order ID: {self.order_id}, Status: {self.status} Amount: {self.amount}"
 
-    def formatted_amount(self):
-        return "${:,.2f}".format(self.amount)
+    # def formatted_amount(self):
+    #     return "${:,.2f}".format(self.amount)
 
 
 # Creates models = O.R.M. Object relational mapping

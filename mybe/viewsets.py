@@ -13,7 +13,7 @@ from .serializers import (
     EquipmentTypeSerializer,
     EquipmentListingSerializer,
     CustomerOrderSerializer,
-    CustomerSerializer,
+    CustomerListSerializer,
     SalesRepresentativeSerializer,
     TransactionSerializer,
 )
@@ -32,7 +32,7 @@ class CustomerOrderViewSet(viewsets.ModelViewSet):
 
 class CustomerListViewSet(viewsets.ModelViewSet):
     queryset = CustomerList.objects.all()
-    serializer_class = CustomerSerializer
+    serializer_class = CustomerListSerializer
 
 class SalesRepresentativeViewSet(viewsets.ModelViewSet):
     queryset = SalesRepresentative.objects.all()

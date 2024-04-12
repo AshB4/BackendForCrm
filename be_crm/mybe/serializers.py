@@ -51,7 +51,7 @@ class SalesRepresentativeSerializer(serializers.ModelSerializer):
 
 
 class TransactionSerializer(serializers.ModelSerializer):
-    formatted_amount = serializers.CharField()
+    amount = serializers.CharField()
 
     class Meta:
         model = Transaction
@@ -61,4 +61,5 @@ class TransactionSerializer(serializers.ModelSerializer):
             "payment_method",
             "amount",
             "status",
+            # "formatted_amount"
         ]
