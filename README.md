@@ -1,28 +1,68 @@
-Downloading the Backend (BackendforCRM) from GitHub:
+Frontend (AuctionCRM) README
 
-Go to the GitHub repository for the BackendforCRM backend project.
-Click on the "Code" button, then select "Download ZIP" to download the project as a ZIP file.
-Once the ZIP file is downloaded, extract its contents to a different folder on your computer.
-Now you have the backend project files ready to run.
+# AuctionCRM Frontend 
 
-Starting the Backend (BackendforCRM):
+This repository contains the frontend of the AuctionCRM application, built using React.js. 
 
-Open a new terminal or command prompt on your computer, if you haven't already done so.
-Go to the folder where the "BackendforCRM" backend project is located.
-In the terminal run python3 -m pip install -r requirements.txt to download the requirements for this project.
-This is usually a folder with all the code files for the backend application.
-Inside this folder, there should be a file named manage.py.
-This file is the main entry point for Django projects.
-In the terminal, navigate to the folder where the "BackendforCRM" project is located,
-Once you are in the correct folder, type the command python manage.py runserver and press Enter.
-This command will start the Django development server for the backend application.
-You should see a message in the terminal indicating that the server is running, 
-along with a URL (usually http://localhost:8000).
-This is the URL where the backend application is running.
-You don't need to open this URL in your web browser like you did for the frontend application.
-The backend server will run in the background and handle requests from the frontend application.
+## Table of Contents
+1. [Prerequisites](#prerequisites)
+2. [Setup Instructions](#setup-instructions)
+3. [Running the Frontend Server](#running-the-frontend-server)
+4. [Project Structure](#project-structure)
+5. [Contributing](#contributing)
+6. [License](#license)
+7. [Backend Information](#backend-information)
 
-That's it! You've successfully started the Python Django backend ("BackendforCRM").
-You can now interact with the backend application in your web browser, and it will communicate with the backend to fetch or store data as needed.
-Please download the frontend React.js application ("AuctionCRM") if you have not done so already.
+## Prerequisites
+- Node.js (v14 or later)
+- npm (v6 or later)
+- Git
 
+## Setup Instructions
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/AshB4/AuctionCRM.git
+cd AuctionCRM
+2. Install Dependencies
+bash
+Copy code
+npm install
+3. Start the Development Server
+bash
+Copy code
+npm start
+The app will run in development mode. Open http://localhost:3000 to view it in the browser.
+
+4. Build for Production
+bash
+Copy code
+npm run build
+This will build the app for production to the build folder.
+
+Running the Frontend Server
+To run the full stack application, start both the frontend and backend servers:
+
+Open a terminal and navigate to the AuctionCRM directory, then run npm start.
+Make sure the backend server is running as well.
+Project Structure
+java
+Copy code
+AuctionCRM/
+├── public/
+├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── App.js
+│   └── index.js
+├── .gitignore
+├── package.json
+└── README.md
+Contributing
+Contributions are welcome! Please fork this repository and submit a pull request for any features, bug fixes, or enhancements.
+
+License
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+Frontend Information
+This project works in conjunction with the AuctionCRM frontend, a React.js-based frontend. Please refer to the AuctionCRM repository for setup and running instructions.
