@@ -1,68 +1,64 @@
-Frontend (AuctionCRM) README
+🧾 AuctionCRM Backend
+Django REST API for a full-stack CRUD learning project — client and auction item management.
 
-# AuctionCRM Frontend 
+🔍 Overview
+This repo provides the backend for AuctionCRM, a full-stack CRUD application built to practice integration between React and Django REST Framework. The API supports client and inventory management features, with endpoints designed for hands-on learning and scalable architecture.
 
-This repository contains the frontend of the AuctionCRM application, built using React.js. 
+⚙️ Features
+🔁 RESTful Endpoints for Clients and Auction Items
 
-## Table of Contents
-1. [Prerequisites](#prerequisites)
-2. [Setup Instructions](#setup-instructions)
-3. [Running the Frontend Server](#running-the-frontend-server)
-4. [Project Structure](#project-structure)
-5. [Contributing](#contributing)
-6. [License](#license)
-7. [Backend Information](#backend-information)
+🧩 JSONField model support for flexible data storage
 
-## Prerequisites
-- Node.js (v14 or later)
-- npm (v6 or later)
-- Git
+🌐 CORS Enabled to support React frontend integration
 
-## Setup Instructions
+🔐 Placeholder for authentication (ready for JWT or session setup)
 
-### 1. Clone the Repository
-```bash
-git clone https://github.com/AshB4/AuctionCRM.git
-cd AuctionCRM
-2. Install Dependencies
+⚙️ Modular Django App Structure for easy feature expansion
+
+🧰 Tech Stack
+Framework: Django 3.2.12
+
+API Toolkit: Django REST Framework 3.12.4
+
+Cross-Origin Support: django-cors-headers 3.7.0
+
+Dynamic Fields: jsonfield 3.1.0
+
+Database: SQLite (default) or switchable to PostgreSQL
+
+🚀 Getting Started
+1. Clone & Install
 bash
-Copy code
-npm install
-3. Start the Development Server
+git clone https://github.com/AshB4/BackendForCrm.git  
+cd BackendForCrm  
+pip install -r requirements.txt  
+2. Run the Development Server
 bash
-Copy code
-npm start
-The app will run in development mode. Open http://localhost:3000 to view it in the browser.
+python manage.py runserver
+The API will be available at http://localhost:8000
 
-4. Build for Production
-bash
-Copy code
-npm run build
-This will build the app for production to the build folder.
+📁 Example Endpoints
+Method	Endpoint	Description
+GET	/api/clients/	List all clients
+POST	/api/clients/	Create a new client
+GET	/api/items/	List all auction items
+POST	/api/items/	Add a new item
 
-Running the Frontend Server
-To run the full stack application, start both the frontend and backend servers:
+Full CRUD available for both clients and items. Swagger or Postman collection available upon request.
 
-Open a terminal and navigate to the AuctionCRM directory, then run npm start.
-Make sure the backend server is running as well.
-Project Structure
-java
-Copy code
-AuctionCRM/
-├── public/
-├── src/
-│   ├── components/
-│   ├── pages/
-│   ├── App.js
-│   └── index.js
-├── .gitignore
-├── package.json
-└── README.md
-Contributing
-Contributions are welcome! Please fork this repository and submit a pull request for any features, bug fixes, or enhancements.
+🔗 Connect to Frontend
+Use this repo with the frontend:
+👉 AuctionCRM Frontend (React)
 
-License
-This project is licensed under the MIT License. See the LICENSE file for details.
+📌 Project Status
+✔️ Active — used as a training sandbox
+🔜 Future goals:
 
-Frontend Information
-This project works in conjunction with the AuctionCRM frontend, a React.js-based frontend. Please refer to the AuctionCRM repository for setup and running instructions.
+Add authentication (JWT/session)
+
+Pagination, filtering, and search
+
+Swagger/OpenAPI docs
+
+📄 License
+MIT License
